@@ -29,6 +29,11 @@ public class User {
         }
     }
 
+    public int getVl(Module module) {
+        if (!VL.containsKey(module)) return 0;
+        return VL.get(module);
+    }
+
     public void updateLocation() {
         lastULocation = PLAYER.getLocation();
     }
