@@ -1,0 +1,7 @@
+# $player - 玩家名称
+# $reason - 封禁理由（自动生成）
+ban-method: "ban $player 1d $reason"
+
+# 模块开关设置
+modules:
+  Fly: true

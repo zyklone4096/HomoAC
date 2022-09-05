@@ -1,0 +1,7 @@
+name: HomoAC
+version: '${project.version}'
+main: cn.afternode.homo.homoac.HomoAC
+prefix: HomoAC
+depend: [ packetevents ]
+authors: [ HomoDev ]
+description: By Homo, For Homo
