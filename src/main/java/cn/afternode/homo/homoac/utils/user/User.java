@@ -2,6 +2,7 @@ package cn.afternode.homo.homoac.utils.user;
 
 import cn.afternode.homo.homoac.utils.ServerUtil;
 import cn.afternode.homo.homoac.utils.module.Module;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
@@ -9,6 +10,8 @@ import java.util.HashMap;
 public class User {
     public final Player PLAYER;
     public final HashMap<Module, Integer> VL;
+
+    public Location lastULocation;
 
     public User(Player player) {
         PLAYER = player;
@@ -24,5 +27,9 @@ public class User {
         if (VL.get(module) >= module.banVl) {
             ServerUtil.banPlayer(PLAYER, module.banReason);
         }
+    }
+
+    public void updateLocation() {
+        lastULocation = PLAYER.getLocation();
     }
 }
