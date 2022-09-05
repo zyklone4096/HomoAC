@@ -10,6 +10,7 @@ public class FlyMaster extends Module {
     @Override
     public void init() {
         banVl = 20;
+        flagVl = 13;
         banReason = "奇怪的移动方式增加了(恼)";
 
         addListener(new FlyA(this));

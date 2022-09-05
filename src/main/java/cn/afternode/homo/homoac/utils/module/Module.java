@@ -8,6 +8,7 @@ import org.bukkit.event.Listener;
 public class Module implements Listener {
     public final String NAME;
     public int banVl = 10;
+    public int flagVl = 5;
     public String banReason = "被撅力";
 
     public Module(String name) {
