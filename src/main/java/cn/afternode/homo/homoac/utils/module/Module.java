@@ -1,8 +1,10 @@
 package cn.afternode.homo.homoac.utils.module;
 
+import cn.afternode.homo.homoac.HomoAC;
 import com.github.retrooper.packetevents.PacketEvents;
 import com.github.retrooper.packetevents.event.PacketListenerAbstract;
 import com.github.retrooper.packetevents.event.PacketReceiveEvent;
+import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 
 public class Module implements Listener {
@@ -25,6 +27,8 @@ public class Module implements Listener {
                     ((PacketReceiveListener) listener).onPacket(event);
                 }
             });
+        } else if (listener instanceof Listener) {
+            Bukkit.getPluginManager().registerEvents((Listener) listener, HomoAC.INSTANCE);
         }
     }
 }

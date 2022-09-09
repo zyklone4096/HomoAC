@@ -6,4 +6,6 @@ public class ChildrenModule {
     public ChildrenModule(Module parent) {
         PARENT = parent;
     }
+
+    public void init() {}
 }

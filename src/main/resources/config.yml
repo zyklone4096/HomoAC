@@ -5,3 +5,4 @@ ban-method: "ban $player 1d $reason"
 # 模块开关设置
 modules:
   Fly: true
+  Crasher: true

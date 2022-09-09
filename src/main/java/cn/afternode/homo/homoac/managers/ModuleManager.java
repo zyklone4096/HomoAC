@@ -1,6 +1,7 @@
 package cn.afternode.homo.homoac.managers;
 
 import cn.afternode.homo.homoac.HomoAC;
+import cn.afternode.homo.homoac.modules.crasher.CrasherMaster;
 import cn.afternode.homo.homoac.modules.fly.FlyMaster;
 import cn.afternode.homo.homoac.utils.module.Module;
 import org.bukkit.Bukkit;
@@ -15,6 +16,7 @@ public class ModuleManager implements Manager{
     public void init() {
         List<Module> pre = new ArrayList<>();
         pre.add(new FlyMaster());
+        pre.add(new CrasherMaster());
 
         for (Module module: pre) {
             loadModule(module);
