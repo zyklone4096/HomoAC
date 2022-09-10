@@ -1,6 +1,8 @@
 # $player - 玩家名称
 # $reason - 封禁理由（自动生成）
 ban-method: "ban $player 1d $reason"
+# 封禁时尝试崩溃玩家客户端
+crash: false
 
 # 模块开关设置
 modules:

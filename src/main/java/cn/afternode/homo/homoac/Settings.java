@@ -13,6 +13,7 @@ public class Settings {
         BAN_METHOD = FC.getString("ban-method", "ban $player 1d $reason");
 
         SHOW_IP = FC.getBoolean("command.show-player-ip", false);
+        CRASH_BAN = FC.getBoolean("crash", false);
     }
 
     public boolean getModuleState(Module module) {
@@ -22,4 +23,5 @@ public class Settings {
     public String BAN_METHOD;
 
     public boolean SHOW_IP;
+    public boolean CRASH_BAN;
 }

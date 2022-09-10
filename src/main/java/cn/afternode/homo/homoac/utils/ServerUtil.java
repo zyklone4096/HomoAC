@@ -18,6 +18,9 @@ public class ServerUtil {
     public static void banPlayer(Player player, String reason) {
         dispatchCommand(HomoAC.SETTINGS.BAN_METHOD.replace("$player", player.getName())
         .replace("$reason", reason));
+        if (HomoAC.SETTINGS.CRASH_BAN) {
+            ClientUtil.sendCrashPacket(player);
+        }
     }
 
     public static boolean isPaper() {
