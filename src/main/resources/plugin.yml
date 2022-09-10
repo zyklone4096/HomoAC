@@ -5,3 +5,30 @@ prefix: HomoAC
 depend: [ packetevents ]
 authors: [ HomoDev ]
 description: By Homo, For Homo
+
+commands:
+  homoac:
+    aliases:
+      - homo
+    permission: homoac.command
+
+permissions:
+  homoac.*:
+    default: op
+    children:
+      - homoac.notify.*
+      - homoac.bypass.*
+      - homoac.admin
+      - homoac.command
+
+  homoac.notify.*:
+    default: op
+    children:
+      - homoac.notify.send
+      - homoac.notify.receive
+
+  homoac.bypass.*:
+    default: op
+    children:
+      - homoac.bypass.fly
+      - homoac.bypass.crasher

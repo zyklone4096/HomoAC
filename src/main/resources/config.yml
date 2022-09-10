@@ -6,3 +6,7 @@ ban-method: "ban $player 1d $reason"
 modules:
   Fly: true
   Crasher: true
+
+command:
+  # 管理员运行analyse时显示目标玩家IP地址
+  show-player-ip: false

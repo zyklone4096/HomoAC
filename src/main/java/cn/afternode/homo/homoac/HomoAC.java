@@ -1,5 +1,6 @@
 package cn.afternode.homo.homoac;
 
+import cn.afternode.homo.homoac.managers.CommandManager;
 import cn.afternode.homo.homoac.managers.ModuleManager;
 import cn.afternode.homo.homoac.managers.UserManager;
 import org.bukkit.Bukkit;
@@ -8,19 +9,24 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.logging.Logger;
+
 public final class HomoAC extends JavaPlugin {
     public static HomoAC INSTANCE;
     public static ConsoleCommandSender CCS;
     public static Settings SETTINGS;
     public static FileConfiguration FC;
+    public static Logger LOGGER;
 
     public static ModuleManager MODULE_MANAGER;
     public static UserManager USER_MANAGER;
+    public static CommandManager COMMAND_MANAGER;
 
     @Override
     public void onLoad() {
         INSTANCE = this;
         CCS = Bukkit.getConsoleSender();
+        LOGGER = getLogger();
 
         saveDefaultConfig();
     }
@@ -36,6 +42,9 @@ public final class HomoAC extends JavaPlugin {
 
         USER_MANAGER = new UserManager();
         USER_MANAGER.init();
+
+        COMMAND_MANAGER = new CommandManager();
+        COMMAND_MANAGER.init();
     }
 
     @Override
