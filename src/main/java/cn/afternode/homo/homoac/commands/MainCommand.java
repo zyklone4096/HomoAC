@@ -47,9 +47,12 @@ public class MainCommand extends Command {
                 User user = HomoAC.USER_MANAGER.getUser(player);
                 sb.append("显示名称：").append(player.getDisplayName()).append("\n");
                 sb.append("UUID：").append(player.getUniqueId().toString()).append("\n");
-                if (sender.hasPermission("homoac.admin")
-                && HomoAC.SETTINGS.SHOW_IP) {
-                    sb.append("登录IP：").append(player.getAddress().toString()).append("\n");
+                if (sender.hasPermission("homoac.admin")) {
+                    if (HomoAC.SETTINGS.SHOW_IP) {
+                        sb.append("登录IP：").append(player.getAddress().toString()).append("\n");
+                    } else {
+                        sb.append("登录IP：当前配置已禁用显示IP");
+                    }
                 }
                 if (user.VL.keySet().size() != 0) {
                     sb.append(ChatColor.RED).append("玩家Vl数值：");
