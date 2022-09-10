@@ -11,5 +11,7 @@ public class CrasherMaster extends Module {
     @Override
     public void init() {
         addListener(new CrasherA(this));
+        addListener(new CrasherB(this));
+        addListener(new CrasherC(this));
     }
 }
