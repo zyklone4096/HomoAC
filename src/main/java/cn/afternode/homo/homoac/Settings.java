@@ -2,13 +2,11 @@ package cn.afternode.homo.homoac;
 
 import cn.afternode.homo.homoac.utils.module.Module;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.jetbrains.annotations.NotNull;
 
-public class Settings {
-    @NotNull
-    public FileConfiguration FC;
+public class Settings {public FileConfiguration FC;
 
-    public Settings(@NotNull FileConfiguration fc) {
+    public Settings(FileConfiguration fc) {
+        if (fc == null) throw new NullPointerException();
         FC = fc;
     }
 
