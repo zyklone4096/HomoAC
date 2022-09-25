@@ -7,6 +7,7 @@ public class CrasherMaster extends Module {
     public CrasherMaster() {
         super("Crasher");
         banVl = 5;
+        banReason = "奇怪的发包增加了（恼）";
     }
 
     @Override
