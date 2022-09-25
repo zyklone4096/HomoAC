@@ -3,6 +3,7 @@ package cn.afternode.homo.homoac;
 import cn.afternode.homo.homoac.managers.CommandManager;
 import cn.afternode.homo.homoac.managers.ModuleManager;
 import cn.afternode.homo.homoac.managers.UserManager;
+import cn.afternode.homo.homoac.utils.bStats;
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -17,6 +18,7 @@ public final class HomoAC extends JavaPlugin {
     public static Settings SETTINGS;
     public static FileConfiguration FC;
     public static Logger LOGGER;
+    public static bStats BSTATS;
 
     public static ModuleManager MODULE_MANAGER;
     public static UserManager USER_MANAGER;
@@ -45,6 +47,9 @@ public final class HomoAC extends JavaPlugin {
 
         COMMAND_MANAGER = new CommandManager();
         COMMAND_MANAGER.init();
+
+        BSTATS = new bStats();
+        BSTATS.init();
     }
 
     @Override
