@@ -32,3 +32,4 @@ permissions:
     children:
       - homoac.bypass.fly
       - homoac.bypass.crasher
+      - homoac.bypass.attack

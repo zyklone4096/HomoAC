@@ -3,11 +3,11 @@ package cn.afternode.homo.homoac;
 import cn.afternode.homo.homoac.managers.CommandManager;
 import cn.afternode.homo.homoac.managers.ModuleManager;
 import cn.afternode.homo.homoac.managers.UserManager;
+import cn.afternode.homo.homoac.utils.ServerUtil;
 import cn.afternode.homo.homoac.utils.bStats;
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Properties;
@@ -33,6 +33,10 @@ public final class HomoAC extends JavaPlugin {
         INSTANCE = this;
         CCS = Bukkit.getConsoleSender();
         LOGGER = getLogger();
+
+        if (ServerUtil.isForge()) {
+            LOGGER.warning("检测到服务端可能是Forge，部分模块可能出现误判");
+        }
 
         saveDefaultConfig();
     }
