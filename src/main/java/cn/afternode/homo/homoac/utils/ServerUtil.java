@@ -19,4 +19,19 @@ public class ServerUtil {
         dispatchCommand(HomoAC.SETTINGS.BAN_METHOD.replace("$player", player.getName())
         .replace("$reason", reason));
     }
+
+    public static boolean isPaper() {
+        String name = Bukkit.getServer().getName();
+
+        return name.contains("Paper") || name.contains("Mohist");
+    }
+
+    public static boolean isForge() {
+        try {
+            Class.forName("net.minecraftforge.fml.common.Mod");
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
 }
