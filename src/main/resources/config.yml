@@ -6,9 +6,13 @@ ban-method: "ban $player 1d $reason"
 modules:
   Fly: true
   Crasher: true
+
   # 通过一些垃圾逻辑检测EMPv2攻击
   # 添加homoac.bypass.attack权限以放通特定玩家
   AntiAttack: false
+
+  # 杂项移动
+  MovementMisc: true
 
 command:
   # 管理员运行analyse时显示目标玩家IP地址

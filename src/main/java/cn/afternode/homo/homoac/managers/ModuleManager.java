@@ -4,6 +4,7 @@ import cn.afternode.homo.homoac.HomoAC;
 import cn.afternode.homo.homoac.modules.antiattack.AntiAttackMaster;
 import cn.afternode.homo.homoac.modules.crasher.CrasherMaster;
 import cn.afternode.homo.homoac.modules.fly.FlyMaster;
+import cn.afternode.homo.homoac.modules.movement_misc.MovementMiscMaster;
 import cn.afternode.homo.homoac.utils.module.Module;
 import org.bukkit.Bukkit;
 
@@ -19,6 +20,7 @@ public class ModuleManager implements Manager{
         pre.add(new FlyMaster());
         pre.add(new CrasherMaster());
         pre.add(new AntiAttackMaster());
+        pre.add(new MovementMiscMaster());
 
         for (Module module: pre) {
             loadModule(module);
