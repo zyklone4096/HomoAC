@@ -1,6 +1,7 @@
 package cn.afternode.homo.homoac.managers;
 
 import cn.afternode.homo.homoac.HomoAC;
+import cn.afternode.homo.homoac.modules.antiattack.AntiAttackMaster;
 import cn.afternode.homo.homoac.modules.crasher.CrasherMaster;
 import cn.afternode.homo.homoac.modules.fly.FlyMaster;
 import cn.afternode.homo.homoac.utils.module.Module;
@@ -17,6 +18,7 @@ public class ModuleManager implements Manager{
         List<Module> pre = new ArrayList<>();
         pre.add(new FlyMaster());
         pre.add(new CrasherMaster());
+        pre.add(new AntiAttackMaster());
 
         for (Module module: pre) {
             loadModule(module);
