@@ -10,6 +10,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Properties;
 import java.util.logging.Logger;
 
 public final class HomoAC extends JavaPlugin {
@@ -23,6 +24,9 @@ public final class HomoAC extends JavaPlugin {
     public static ModuleManager MODULE_MANAGER;
     public static UserManager USER_MANAGER;
     public static CommandManager COMMAND_MANAGER;
+
+    public static boolean PROP_ENABLED;
+    public static ExtProperties EXT_PROPERTY;
 
     @Override
     public void onLoad() {
@@ -38,6 +42,15 @@ public final class HomoAC extends JavaPlugin {
         // Plugin startup logic
         FC = getConfig();
         SETTINGS = new Settings(getConfig());
+        Properties prop = new Properties();
+        saveResource("ext.properties", false);
+        try {
+            prop.load(getResource("ext.properties"));
+            EXT_PROPERTY = new ExtProperties(prop);
+        } catch (Exception e) {
+            LOGGER.warning("ExtProperties load failed");
+            e.printStackTrace();
+        }
 
         MODULE_MANAGER = new ModuleManager();
         MODULE_MANAGER.init();
