@@ -16,6 +16,11 @@ public class AntiAttackA extends ChildrenModule implements StdEventListener {
         super(parent);
     }
 
+    @Override
+    public void init() {
+        HomoAC.LOGGER.warning("[AntiAttack] 如需修改踢出信息，请查看ext.properties中的aa.message");
+    }
+
     private boolean isEMPBot(String name) {
         Pattern pattern = Pattern.compile("([\\s\\S])([0-9a-z])");
         return pattern.matcher(name).find();
