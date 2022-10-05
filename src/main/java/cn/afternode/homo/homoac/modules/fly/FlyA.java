@@ -9,6 +9,7 @@ import cn.afternode.homo.homoac.utils.user.User;
 import com.github.retrooper.packetevents.event.PacketReceiveEvent;
 import com.github.retrooper.packetevents.protocol.packettype.PacketType;
 import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientPlayerPosition;
+import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientPlayerPositionAndRotation;
 
 // AACFly PacketScanner
 public class FlyA extends ChildrenModule implements PacketReceiveListener {
@@ -46,7 +47,7 @@ public class FlyA extends ChildrenModule implements PacketReceiveListener {
             }
         } else if (event.getPacketType() == PacketType.Play.Client.PLAYER_POSITION_AND_ROTATION) {
             User user = HomoAC.USER_MANAGER.getUser(event);
-            WrapperPlayClientPlayerPosition packet = new WrapperPlayClientPlayerPosition(event);
+            WrapperPlayClientPlayerPositionAndRotation packet = new WrapperPlayClientPlayerPositionAndRotation(event);
 
             /*
             [FDPClient AAC520VanillaFly][sendPacket]
