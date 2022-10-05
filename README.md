@@ -20,7 +20,7 @@
   
 ## 安装
 
-1. 确保服务端版本介于1.12.2-1.19.x
+1. 确保服务端版本介于1.8.8-1.19.x
 
 2. 获取PacketEvents 2.0（或从depends文件夹下载），放入plugins中，然后从Releases下载HomoAC，同样放入plugins
 
