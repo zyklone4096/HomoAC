@@ -1,6 +1,7 @@
 package cn.afternode.homo.homoac.modules.crasher;
 
 import cn.afternode.homo.homoac.HomoAC;
+import cn.afternode.homo.homoac.utils.annotations.SkidHack;
 import cn.afternode.homo.homoac.utils.module.ChatListener;
 import cn.afternode.homo.homoac.utils.module.ChildrenModule;
 import cn.afternode.homo.homoac.utils.module.Module;
@@ -9,11 +10,9 @@ import cn.afternode.homo.homoac.utils.user.User;
 import com.github.retrooper.packetevents.event.PacketReceiveEvent;
 import com.github.retrooper.packetevents.protocol.packettype.PacketType;
 import com.github.retrooper.packetevents.util.Vector3d;
-import com.github.retrooper.packetevents.util.Vector3i;
-import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientPlayerBlockPlacement;
 import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientPlayerPosition;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
 
+@SkidHack(liquidHack = SkidHack.HackTypes.LIQUID.FDP_CLIENT)
 public class CrasherA extends ChildrenModule implements PacketReceiveListener {
 
     public CrasherA(Module parent) {

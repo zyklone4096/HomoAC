@@ -2,6 +2,7 @@ package cn.afternode.homo.homoac.modules.fly;
 
 import cn.afternode.homo.homoac.HomoAC;
 import cn.afternode.homo.homoac.utils.FlagUtil;
+import cn.afternode.homo.homoac.utils.annotations.SkidClass;
 import cn.afternode.homo.homoac.utils.module.ChildrenModule;
 import cn.afternode.homo.homoac.utils.module.Module;
 import cn.afternode.homo.homoac.utils.module.StdEventListener;
@@ -11,6 +12,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityToggleGlideEvent;
 
 // ElytraFly
+@SkidClass(plugin = "XinAntiCheat", clazz = "dev.zenhao.xin.listeners.movement.PacketElytraFly", modified = true)
 public class FlyB extends ChildrenModule implements StdEventListener {
     public FlyB(Module parent) {
         super(parent);

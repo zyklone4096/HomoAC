@@ -2,6 +2,7 @@ package cn.afternode.homo.homoac.modules.fly;
 
 import cn.afternode.homo.homoac.HomoAC;
 import cn.afternode.homo.homoac.utils.FlagUtil;
+import cn.afternode.homo.homoac.utils.annotations.SkidHack;
 import cn.afternode.homo.homoac.utils.module.ChildrenModule;
 import cn.afternode.homo.homoac.utils.module.Module;
 import cn.afternode.homo.homoac.utils.module.PacketReceiveListener;
@@ -12,6 +13,7 @@ import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientPl
 import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientPlayerPositionAndRotation;
 
 // AACFly PacketScanner
+@SkidHack(liquidHack = SkidHack.HackTypes.LIQUID.FDP_CLIENT)
 public class FlyA extends ChildrenModule implements PacketReceiveListener {
     public FlyA(Module parent) {
         super(parent);

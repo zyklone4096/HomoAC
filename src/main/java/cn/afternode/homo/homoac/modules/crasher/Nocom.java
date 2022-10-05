@@ -2,14 +2,15 @@ package cn.afternode.homo.homoac.modules.crasher;
 
 import cn.afternode.homo.homoac.HomoAC;
 import cn.afternode.homo.homoac.utils.ServerUtil;
+import cn.afternode.homo.homoac.utils.annotations.SkidHack;
 import cn.afternode.homo.homoac.utils.module.ChildrenModule;
 import cn.afternode.homo.homoac.utils.module.Module;
 import cn.afternode.homo.homoac.utils.module.PacketReceiveListener;
 import com.github.retrooper.packetevents.event.PacketReceiveEvent;
 import com.github.retrooper.packetevents.protocol.packettype.PacketType;
 import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientPlayerDigging;
-import org.bukkit.Bukkit;
 
+@SkidHack(modHack = SkidHack.HackTypes.MOD.WURST)
 public class Nocom extends ChildrenModule implements PacketReceiveListener {
     public Nocom(Module parent) {
         super(parent);

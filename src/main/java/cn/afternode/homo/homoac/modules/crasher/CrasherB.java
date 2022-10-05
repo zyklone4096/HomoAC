@@ -1,12 +1,14 @@
 package cn.afternode.homo.homoac.modules.crasher;
 
 import cn.afternode.homo.homoac.HomoAC;
+import cn.afternode.homo.homoac.utils.annotations.SkidHack;
 import cn.afternode.homo.homoac.utils.module.ChatListener;
 import cn.afternode.homo.homoac.utils.module.ChildrenModule;
 import cn.afternode.homo.homoac.utils.module.Module;
 import cn.afternode.homo.homoac.utils.user.User;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
+@SkidHack(liquidHack = SkidHack.HackTypes.LIQUID.FDP_CLIENT)
 public class CrasherB extends ChildrenModule implements ChatListener {
     public CrasherB(Module parent) {
         super(parent);
