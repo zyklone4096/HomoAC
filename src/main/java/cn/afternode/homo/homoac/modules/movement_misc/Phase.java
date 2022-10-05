@@ -12,8 +12,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerMoveEvent;
 
 public class Phase extends ChildrenModule implements StdEventListener {
+
     public Phase(Module parent) {
-        super(parent);
+        super(parent, "开启虚化！");
     }
 
     @EventHandler
