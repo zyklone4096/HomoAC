@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClientUtil {
+    /**
+     * Try to crash player's client
+     * @param target Target player
+     */
     public static void sendCrashPacket(Player target) {
         WrapperPlayServerExplosion packet = new WrapperPlayServerExplosion(
                 new Vector3f(Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE),
@@ -22,6 +26,10 @@ public class ClientUtil {
         PacketEvents.getAPI().getPlayerManager().getUser(target).sendPacket(packet);
     }
 
+    /**
+     * Crash client of user
+     * @param user Target user
+     */
     public static void sendCrashPacket(User user) {
         sendCrashPacket(user.PLAYER);
     }
