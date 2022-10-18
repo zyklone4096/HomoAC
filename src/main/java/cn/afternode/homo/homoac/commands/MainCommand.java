@@ -54,6 +54,9 @@ public class MainCommand extends Command {
                         sb.append("登录IP：当前配置已禁用显示IP");
                     }
                 }
+                if (user.isGeyser()) {
+                    sb.append("此玩家从基岩版加入\n");
+                }
                 if (user.VL.keySet().size() != 0) {
                     sb.append(ChatColor.RED).append("玩家Vl数值：");
                     for(Module module: user.VL.keySet()) {

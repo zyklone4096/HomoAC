@@ -1,5 +1,6 @@
 package cn.afternode.homo.homoac.utils.user;
 
+import cn.afternode.homo.homoac.utils.BedrockUtil;
 import cn.afternode.homo.homoac.utils.ServerUtil;
 import cn.afternode.homo.homoac.utils.module.Module;
 import org.bukkit.Location;
@@ -10,12 +11,14 @@ import java.util.HashMap;
 public class User {
     public final Player PLAYER;
     public final HashMap<Module, Integer> VL;
+    private final boolean isGeyser;
 
     public Location lastULocation;
 
     public User(Player player) {
         PLAYER = player;
         VL = new HashMap<>();
+        isGeyser = BedrockUtil.isFloodgatePlayer(PLAYER);
     }
 
     public void addVl(Module module, int vl) {
@@ -32,6 +35,10 @@ public class User {
     public int getVl(Module module) {
         if (!VL.containsKey(module)) return 0;
         return VL.get(module);
+    }
+
+    public boolean isGeyser() {
+        return isGeyser;
     }
 
     public void updateLocation() {
