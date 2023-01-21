@@ -1,6 +1,10 @@
 # HomoAC
 
+![Homo](https://img.shields.io/badge/Homo-114514-114514)
+
 **By Homo, For Homo**
+
+2023/1/21 之前鸽了，我回来了
 
 114514代包检测反作弊
 
