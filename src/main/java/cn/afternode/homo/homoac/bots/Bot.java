@@ -6,6 +6,7 @@ import org.bukkit.World;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 import java.util.UUID;
 
@@ -30,6 +31,12 @@ public class Bot {
         } catch (Throwable ignored) {}
     }
 
+    public void unregister(){
+        if (HomoAC.BOT_MANAGER.forUuid(uuid) != null) {
+            HomoAC.BOT_MANAGER.removeBot(this);
+        }
+    }
+
     public UUID getUuid() {
         return uuid;
     }
@@ -37,4 +44,6 @@ public class Bot {
     public HumanEntity getEntity() {
         return entity;
     }
+
+    public void onDamage(EntityDamageByEntityEvent event) {}
 }

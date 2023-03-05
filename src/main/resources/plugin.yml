@@ -12,6 +12,10 @@ commands:
       - homo
     permission: homoac.command
 
+  homo-bot:
+    permission: homoac.bot
+    description: Generate a KillAura-Detection bot
+
 permissions:
   homoac.*:
     default: op
@@ -20,6 +24,7 @@ permissions:
       - homoac.bypass.*
       - homoac.admin
       - homoac.command
+      - homoac.bot
 
   homoac.notify.*:
     default: op
