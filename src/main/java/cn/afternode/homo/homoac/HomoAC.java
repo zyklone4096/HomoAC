@@ -1,5 +1,6 @@
 package cn.afternode.homo.homoac;
 
+import cn.afternode.homo.homoac.managers.BotManager;
 import cn.afternode.homo.homoac.managers.CommandManager;
 import cn.afternode.homo.homoac.managers.ModuleManager;
 import cn.afternode.homo.homoac.managers.UserManager;
@@ -24,6 +25,7 @@ public final class HomoAC extends JavaPlugin {
     public static ModuleManager MODULE_MANAGER;
     public static UserManager USER_MANAGER;
     public static CommandManager COMMAND_MANAGER;
+    public static BotManager BOT_MANAGER;
 
     public static boolean PROP_ENABLED;
     public static ExtProperties EXT_PROPERTY;
@@ -67,6 +69,9 @@ public final class HomoAC extends JavaPlugin {
 
         BSTATS = new bStats();
         BSTATS.init();
+
+        BOT_MANAGER = new BotManager();
+        BOT_MANAGER.init();
     }
 
     @Override
